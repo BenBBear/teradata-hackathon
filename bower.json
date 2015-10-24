@@ -23,6 +23,9 @@
     "angular-moment": "~0.10.3",
     "angular-ui-map": "~0.5.0",
     "ngAnimate": "*",
-    "angular-ui-event": "~1.0.0"
+    "angular-ui-event": "~1.0.0",
+    "angular-bootstrap": "~0.14.3",
+    "font-awesome": "fontawesome#~4.4.0",
+    "bootstrap": "~3.3.5"
   }
 }

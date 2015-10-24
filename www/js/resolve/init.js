@@ -1,6 +1,6 @@
 
 
-var app = angular.module('app',['ngFx', 'ngAnimate','angularMoment','ui.map']);
+var app = angular.module('app',['ngFx','ui.bootstrap', 'ngAnimate','angularMoment','ui.map']);
 
 // app
 

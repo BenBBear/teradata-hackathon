@@ -85,3 +85,16 @@
 /*   width: 600px; */
 /*   margin: auto; */
 /* } */
+.p-t-sm {
+  padding-top: 5px; }
+
+.p-b-sm {
+  padding-bottom: 5px; }
+
+.text-white {
+  color: #fff; }
+
+.absolute {
+  position: absolute; }
+  .absolute.bottom {
+    bottom: 0px; }

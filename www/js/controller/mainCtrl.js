@@ -7,4 +7,8 @@ app.controller('mainCtrl',function($scope){
         $scope.$broadcast('setMarkerToTimeLine',arg);
     });
     
+    $scope.random = function(){
+        return Math.random()*10;
+    };
+    
 });

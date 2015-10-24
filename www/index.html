@@ -4,6 +4,10 @@
         <title>{{app.name}}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
         
+        <link href="./lib/fontawesome/css/font-awesome.min.css" rel="stylesheet" />
+        <link href="./lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="./dist/anglur/css/font.css" rel="stylesheet" />
+        <link href="./dist/anglur/css/app.css" rel="stylesheet" />
         <link href="./lib/animate.css/animate.min.css" rel="stylesheet"/>
         <link href="./dist/css/main.css" rel="stylesheet"/>
     </head>
@@ -12,17 +16,89 @@
     <body ng-controller="mainCtrl">
         
         <div class="float left w-30" ng-controller="timeLineCtrl">
-            This is a timeline
+            <div class="h2 bg-dark text-white wrapper text-center">Histography</div>            
+                        
+            <img alt="" ng-src="./assets/mock-timeline.gif" src="./assets/mock-timeline.gif" style="
+    position: relative;
+    transform: rotate(90deg) translateY(330px);
+    z-index: -1;
+">
+            <!-- <div ng-switch="content">
+            <div ng-switch-when="events">
+            <div class="wrapper-sm" ng-repeat="e in events">
+            {{e.msg}}                        
+            </div>
+            </div>
+            <div ng-switch-when="histograph">
+            <iframe src="http://histography.io/"></iframe>                    
+            </div>
+            <div ng-switch-default></div>
+            </div> -->
+            
+            
+            <div class="absolute bottom w-30">
+                <div ng-if="position" class="fx-fade-down bs-shadow wrapper b-b bg-dark lter text-white" >
+                    <div class="">
+                        <strong>latitude</strong>:{{position.lat()}}
+                    </div>
+                    <div  class="">
+                        <strong>longitude</strong>:{{position.lng()}}
+                    </div>
+                </div>
+            </div>
+            
         </div>
-
+        
         <div class="float left w-70">
             <section class="w-full h-full" ng-controller="MapCtrl" >
+                
+                <div ng-repeat="marker in myMarkers" ui-map-marker="myMarkers[$index]"
+                     ui-event="{'map-click': 'openMarkerInfo(marker)'}">
+                </div>
+                <div  ui-map-info-window="myInfoWindow" style="font-size:large">
+                    <div>
+                        <div class="h1 padder m-l-sm p-t-sm p-b-sm " >The Story of this Place
+                        </div>
+                        <div class="m-b-md m-t-md">
+                            
+                            <strong>Top Story </strong>
+                            <div>
+                                Village did removed enjoyed explain nor ham saw calling talking. Securing as informed declared or margaret. Joy horrible moreover man feelings own shy. Request norland neither mistake for yet. Between the for morning assured country believe. On even feet time have an no at. Relation so in confined smallest children unpacked delicate. Why sir end believe uncivil respect. Always get adieus nature day course for common. My little garret repair to desire he esteem. 
+                            </div>
+                            <div class="m-b-md b-b m-t-md">
+                                <strong>Crime rate nearby: <span style="color:red">1.712%</span></strong>  <a href="text-primary float right" style="float:right; color:blue" >See history</a>
+                            </div>
+
+                            <div class="m-b-md b-b m-t-md">
+                                <strong>Renting: <span style="color:red">$1249, Ranking No'3 US</span></strong>  <a href="text-primary" style="float:right;color:blue" >See more info</a>
+                            </div>
+
+                            <div class="m-b-md b-b m-t-md">
+                                <strong>Fire Alert: <span style="color:red">1 in last month</span></strong>  <a href="text-primary float right" style="float:right; color:blue" >See history</a>
+                            </div>
+                            <div class="m-b-md b-b m-t-md">
+                                <strong>Alcoholic Driving Situation: <span style="color:red">severe</span></strong>  <a href="text-primary float right" style="float:right; color:blue" >See policy</a>
+                            </div>
+
+                        </div>
+                        
+                        
+                        <input name=""  type="text" class="form-control " value="" placeholder="Write events and stories you know"/>
+                        <button class="m-t-sm btn btn-block btn-primary">Contribute</button>
+                    </div>
+                    
+                    
+                </div>
                 <div ui-map="myMap"
+                     id="map_canvas"
                      ui-options="mapOptions"
                      ui-event="{'map-click': 'addMarker($event, $params)', 'map-zoom_changed': 'setZoomMessage(myMap.getZoom())' }"
                      class="w-full h-full"></div>
             </section>
         </div>
+
+
+          
         <div class="clearfix"></div>
     </body>
 
@@ -38,6 +114,7 @@
 
 
     <script src="./lib/moment/moment.js"></script>
+    <script src="./lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="./lib/angular-moment/angular-moment.js"></script>
      <script src="./lib/gsap/src/minified/TweenMax.min.js"></script>
      <script src="./lib/ngFx/dist/ngFx.min.js"></script>

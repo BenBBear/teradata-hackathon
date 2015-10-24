@@ -1,6 +1,6 @@
 
 
-var app = angular.module('app',['ngFx', 'ngAnimate','angularMoment','ui.map']);
+var app = angular.module('app',['ngFx','ui.bootstrap', 'ngAnimate','angularMoment','ui.map']);
 
 // app
 
@@ -52,11 +52,19 @@ app.controller('MapCtrl',function($scope){
     };
 });
 
-app.controller('timeLineCtrl',function($scope){
-    $scope.$on('setMarkerToTimeLine',function(evt,arg){
-        alert('You set Marker At'+arg);
-        console.dir(arg);
+app.controller('mainCtrl',function($scope){
+    $scope.app = {
+        name:'test',
+        version:'0.0.0'
+    };
+    $scope.$on('setMarker',function(evt,arg){
+        $scope.$broadcast('setMarkerToTimeLine',arg);
     });
+    
+    $scope.random = function(){
+        return Math.random()*10;
+    };
+    
 });
 
 app.controller('mainCtrl',function($scope){
@@ -68,11 +76,18 @@ app.controller('mainCtrl',function($scope){
         $scope.$broadcast('setMarkerToTimeLine',arg);
     });
     
+    $scope.random = function(){
+        return Math.random()*10;
+    };
+    
 });
 
 app.controller('timeLineCtrl',function($scope){
-    $scope.$on('setMarkerToTimeLine',function(evt,arg){
-        alert('You set Marker At'+arg);
+    $scope.$on('setMarkerToTimeLine',function(evt,arg){       
         console.dir(arg);
+        var pos = arg.position;
+        $scope.position = pos;
+        
     });
+
 });

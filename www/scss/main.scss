@@ -2,3 +2,16 @@
 @import "float.scss";
 @import "./length.scss";
 @import "./map.scss";
+@import "./padding.scss";
+
+
+.text-white{
+  color:#fff;
+}
+
+.absolute{
+  position:absolute;
+  &.bottom{
+    bottom:0px;
+  }
+}
