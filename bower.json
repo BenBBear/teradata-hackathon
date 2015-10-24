@@ -21,6 +21,8 @@
     "angular-google-maps": "~2.2.1",
     "jquery": "~2.1.4",
     "angular-moment": "~0.10.3",
-    "angular-ui-map": "~0.5.0"
+    "angular-ui-map": "~0.5.0",
+    "ngAnimate": "*",
+    "angular-ui-event": "~1.0.0"
   }
 }

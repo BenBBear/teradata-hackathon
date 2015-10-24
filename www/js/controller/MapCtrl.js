@@ -1,20 +1,3 @@
-
-
-var app = angular.module('app',['ngFx', 'ngAnimate','angularMoment','ui.map']);
-
-// app
-
-    // .config(['uiGmapGoogleMapApiProvider', function (GoogleMapApi) {
-    //     GoogleMapApi.configure({
-    //         key: 'AIzaSyAJY4JKy59pmuN1d8Y5Fx4fRVlOBLvCi3o',
-    //         // v: '3.20',
-    //         libraries: 'weather,geometry,visualization'
-    //     });
-    // }]);
-
-
-
-
 app.controller('MapCtrl',function($scope){
     $scope.mapOptions = {
         center: new google.maps.LatLng(35.784, -78.670),
@@ -50,29 +33,4 @@ app.controller('MapCtrl',function($scope){
     $scope.setMarkerPosition = function (marker, lat, lng) {
         marker.setPosition(new google.maps.LatLng(lat, lng));
     };
-});
-
-app.controller('timeLineCtrl',function($scope){
-    $scope.$on('setMarkerToTimeLine',function(evt,arg){
-        alert('You set Marker At'+arg);
-        console.dir(arg);
-    });
-});
-
-app.controller('mainCtrl',function($scope){
-    $scope.app = {
-        name:'test',
-        version:'0.0.0'
-    };
-    $scope.$on('setMarker',function(evt,arg){
-        $scope.$broadcast('setMarkerToTimeLine',arg);
-    });
-    
-});
-
-app.controller('timeLineCtrl',function($scope){
-    $scope.$on('setMarkerToTimeLine',function(evt,arg){
-        alert('You set Marker At'+arg);
-        console.dir(arg);
-    });
 });

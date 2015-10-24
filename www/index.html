@@ -1,26 +1,56 @@
 <html ng-app="app">
 
     <head>
-        <title>{{app.var.title}}</title>
+        <title>{{app.name}}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-
+        
         <link href="./lib/animate.css/animate.min.css" rel="stylesheet"/>
         <link href="./dist/css/main.css" rel="stylesheet"/>
     </head>
 
 
     <body ng-controller="mainCtrl">
-        {{app.name}}
         
-        
+        <div class="float left w-30" ng-controller="timeLineCtrl">
+            This is a timeline
+        </div>
+
+        <div class="float left w-70">
+            <section class="w-full h-full" ng-controller="MapCtrl" >
+                <div ui-map="myMap"
+                     ui-options="mapOptions"
+                     ui-event="{'map-click': 'addMarker($event, $params)', 'map-zoom_changed': 'setZoomMessage(myMap.getZoom())' }"
+                     class="w-full h-full"></div>
+            </section>
+        </div>
+        <div class="clearfix"></div>
     </body>
 
+
+
     <script src="./lib/angular/angular.min.js"></script>
+
+        
+    <script type="text/javascript" src="./lib/angular-ui-event/dist/event.min.js"></script>
+    <script type="text/javascript" src="./lib/angular-ui-map/ui-map.min.js"></script>
+
+
+
+
     <script src="./lib/moment/moment.js"></script>
     <script src="./lib/angular-moment/angular-moment.js"></script>
      <script src="./lib/gsap/src/minified/TweenMax.min.js"></script>
      <script src="./lib/ngFx/dist/ngFx.min.js"></script>
+     <script src="./lib/ngAnimate/js/angular-animate.min.js"></script>
      <script src="./lib/angular-google-maps/dist/angular-google-maps.min.js"></script>
+
+     <script src="./dist/js/app.js"></script>
+     <script>
+      function onGoogleReady() {
+          angular.bootstrap(document.getElementById("map"), ['app']);
+      }      
+     </script>
+     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&callback=onGoogleReady"></script>
      
-    <script src="./dist/js/app.js"></script>   
+     
 </html>
