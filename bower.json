@@ -1,0 +1,26 @@
+{
+  "name": "teradata-hackathon",
+  "version": "0.0.0",
+  "homepage": "https://github.com/BenBBear/teradata-hackathon",
+  "authors": [
+    "Xinyu <xyzhang.me@aliyun.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ngFx": "~1.1.0",
+    "animate.css": "~3.4.0",
+    "angular": "~1.4.7",
+    "angular-ui": "~0.4.0",
+    "angular-google-maps": "~2.2.1",
+    "jquery": "~2.1.4",
+    "angular-moment": "~0.10.3",
+    "angular-ui-map": "~0.5.0"
+  }
+}
