@@ -2,8 +2,7 @@
 
 The Game is over.  **I win the second place.** I am one man team, while other teams all consist of 5 people.
 
-
-Though I think I should be the first one.
+**Lucky me** :smile:
 
 
 ## slide
